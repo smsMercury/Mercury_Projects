@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<parser version="2.0">
+	<template name="ncct" main="true">
+		<group name="ncct_msg_header">
+			<value name="SOM" type="integer" size="2"/>
+			<value name="msg_type" type="raw" size="1"/>
+			<value name="sub_type" type="raw" size="1"/>
+			<value name="msg_length" type="integer" size="4"/>
+			<value name="source" type="raw" size="1"/>
+			<value name="sub_source" type="raw" size="1"/>
+			<value name="destination" type="raw" size="1"/>
+			<value name="sub_destination" type="raw" size="1"/>
+			<value name="classification" type="raw" size="1"/>
+			<value name="compartment" type="raw" size="1"/>
+			<value name="releasability" type="integer" size="2"/>
+			<value name="icd_major" type="raw" size="1"/>
+			<value name="icd_minor" type="raw" size="1"/>
+			<value name="simulation_flag" type="raw" size="1"/>
+			<value name="operating_env" type="raw" size="1"/>
+			<value name="time" type="integer" signed="true" size="8"/>
+		</group>
+		<group name="ncct_sim_header">
+			<value name="reserved" type="integer" size="8"/>
+		</group>
+	</template>
+</parser>
+			
+			

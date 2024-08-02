@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<parser version="2.0">
+	<template name="CMU_Header" main="true">
+		<group name="cmu_header">
+			<value name="length" type="integer" size="4"/>
+			<value name="subject" type="integer" size="4"/>
+			<value name="key" type="integer" size="4"/>
+			<value name="send_inst" type="integer" size="4"/>
+			<value name="dest_inst" type="integer" size="4"/>
+			<value name="msg_type" type="raw" size="1"/>
+			<value name="priority" type="raw" size="1"/>
+			<value name="rpc_id" type="raw" size="1"/>
+			<value name="status" type="raw" size="1"/>
+		</group>
+		<group name="rfos_header">
+			<value name="length" type="integer" size="2"/>
+			<value name="rfos_id" type="integer" size="2" swapped="true"/>
+			<value name="to" type="integer" size="2"/>
+			<value name="from" type="integer" size="2"/>
+		</group>
+	</template>
+</parser>
+			
+			
