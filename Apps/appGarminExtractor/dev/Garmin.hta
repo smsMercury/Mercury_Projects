@@ -1,0 +1,131 @@
+<html>
+	<head>
+		<script type="text/vbscript">
+			Dim goFSO
+			Dim gsBabelPath
+			Dim goGPX, goXSL
+			Dim gsMyPath
+			
+			Sub Window_OnLoad
+				Set goFSO = CreateObject("Scripting.FileSystemObject")
+				gsMyPath = goFSO.GetAbsolutePathName(".\")
+				'msgbox gsMyPath
+				Set WshShell = CreateObject("WScript.Shell")
+				'
+				'	Make sure GPSBabel is here too
+				If Not goFSO.FileExists(".\gpsbabel.exe") Then
+					On Error Resume Next
+					gsBabelPath = WshShell.RegRead("HKCU\Software\Google\Google Earth Plus\InstallLocation") & "\client"
+					If Err.Number <> 0 Then
+						gsBabelPath = ""
+						MsgBox "GPSBABEL could not be found"
+						Exit Sub
+					End If
+					On Error Goto 0
+				Else
+					gsBabelPath = goFSO.GetAbsolutePathName(goFSO.GetParentFolderName(".\gpsbabel.exe"))
+				End If
+				'msgbox "BabelPath = " & gsBabelPath
+				Msgbox "1) Make sure the Garmin is OFF" & vbCRLF & "2) Connect the Garmin to a USB port" & vbCRLF & "3) Turn on the Garmin" & vbCRLF & "4) When the system is ready, click OK"
+				'msgbox goFSO.BuildPath(gsBabelPath,"GPSBabel") & " -t -i garmin -f usb: -o gpx,garminextensions -F " & Chr(34) & goFSO.BuildPath(gsMyPath,"raw.gpx") & Chr(34)
+				'
+				'	Export the data from the Garmin to a GPX file
+				Set oBabel = WshShell.Exec(goFSO.BuildPath(gsBabelPath,"GPSBabel") & " -t -i garmin -f usb: -o gpx,garminextensions -F " & Chr(34) & goFSO.BuildPath(gsMyPath,"raw.gpx") & Chr(34))
+				Do While oBabel.Status = 0
+				Loop
+				'
+				'	Now, read in the GPX data
+				Set goGPX = CreateObject("Microsoft.XMLDOM")
+				goGPX.ASync = False
+				goGPX.Load ".\raw.gpx"
+				'
+				'	Read the stylesheet that builds the table
+				Set goXSL = CreateObject("Microsoft.XMLDOM")
+				goXSL.ASync = False
+				If Not goXSL.Load(".\GPX2HTA.xsl") Then
+					Msgbox "Error in line " & goXSL.parseError.Line & " position " & goXSL.parseError.LinePos & vbCRLF & "Error Code: " & goXSL.ParseError.ErrorCode & vbCRLF & "Reason: " & goXSL.ParseError.Reason & vbCRLF & "Offending Line: [" & goXSL.ParseError.SrcText & "]"
+					Exit Sub
+				End If
+				'
+				'	Apply the stylesheet to the GPX data
+				sResult = goGPX.TransformNode(goXSL)
+				'
+				'	Display the table
+				divGPXData.InnerHTML = sResult
+			End Sub
+			
+			Sub btnProcess_OnClick
+				'
+				'	Hide the button
+				divProcess.InnerText = "Press F5 to process another unit"
+				'
+				'	Get an array of the <trkseg> blocks in the GPX data file
+				Set oSegs = goGPX.GetElementsByTagName("trkseg")
+				'
+				'	Loop through the segment check boxes named "chkUseSeg#" to see if they are checked
+				'	The number of segments is stored in a hidden <span> called "spnGPXNumSeg" created by the stylesheet
+				'
+				'	If we encounter saved tracks, no table row is created, so the number of segments may not represent the number of checkboxes;
+				'	therefore, we must validate that there is a checkbox object before we query its properties.
+				For iSeg = 1 To CLng(spnGPXNumSeg.InnerText)
+					'
+					'	Get the check box
+					Set oChk = Document.GetElementByID("chkUseSeg" & iSeg)
+					'
+					'	Do we have a real checkbox?
+					If Not oChk Is Nothing Then
+						'
+						'	Hide it so the user can't click on it again
+						oChk.Style.Display = "none"
+						'
+						'	If the check box is checked, the control's "checked" attribute will exist
+						If oChk.Checked Then
+							'
+							'	Replace the checkbox
+							oChk.ParentNode.InnerText = "X"
+							'
+							'	Create an attribute and attach it to the appropriate <trkseg> block in the GPX data
+							'	oSegs will be 0-based, but iSeg is 1-based, so we have to adjust
+							oSegs(iSeg-1).SetAttribute "import", 1
+							oSegs(iSeg-1).SetAttribute "cat", selPlayerClass.Value
+							oSegs(iSeg-1).SetAttribute "type", txtPlayerType.Value
+							oSegs(iSeg-1).SetAttribute "unit", txtUnitID.Value
+							oSegs(iSeg-1).SetAttribute "iff", selPlayerAllegiance.Value
+							'
+							'	The next stylesheet will operate ONLY on segments with this attribute set!
+						End If
+					End If
+				Next
+				'
+				'	Now, use the next stylesheet to generate data arrays
+				If Not goXSL.Load(".\GPX2CSV.xsl") Then
+					Msgbox "Error in line " & goXSL.parseError.Line & " position " & goXSL.parseError.LinePos & vbCRLF & "Error Code: " & goXSL.ParseError.ErrorCode & vbCRLF & "Reason: " & goXSL.ParseError.Reason & vbCRLF & "Offending Line: [" & goXSL.ParseError.SrcText & "]"
+					Exit Sub
+				End If
+				psCSV = goGPX.TransformNode(goXSL)
+				paFiles = Split(psCSV,"||")
+				For iFile = 0 To UBound(paFiles) Step 2
+					Set oFile = goFSO.CreateTextFile(paFiles(iFile),True)
+					oFile.Write paFiles(iFile+1)
+					oFile.Close
+				Next
+				goFSO.DeleteFile ".\raw.gpx", True
+				msgbox "All files written"
+			End Sub
+		</script>
+	</head>
+	<body style="font-family:Arial">
+		<div id="divHdr">
+			<table>
+				<tr><td>GPS Unit</td><td><input type="text" id="txtUnitID"></td></tr>
+				<tr><td>Player Allegiance</td><td><select id="selPlayerAllegiance"><option value="6">Hostile</option><option value="3">Friend</option></select></td></tr>
+				<tr><td>Player Class</td><td><select id="selPlayerClass"><option value="AC">Aircraft/Helo/Missile</option><option value="LC">Ground Vehicle</option><option value="WC">Water Craft/Ship/Boat</option><option value="SC">Spacecraft/Satellite</option></select></td></tr>
+				<tr><td>Player Type</td><td><input type="text" id="txtPlayerType" value="C182"></td></tr>
+			</table>
+		</div>
+		<div id="divGPXData"></div>
+		<div id="divProcess">
+			<button id="btnProcess">Process Selected Segments</button>
+		</div>
+	</body>
+</html>
