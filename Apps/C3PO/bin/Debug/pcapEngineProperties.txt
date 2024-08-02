@@ -1,0 +1,3 @@
+C:\Mercury\CCCP\Scripts
+C:\Mercury\PcapParserEngine\CmuRfosHdrScript.xml
+C:\Mercury\PcapParserEngine\NcctHdrScript.xml
