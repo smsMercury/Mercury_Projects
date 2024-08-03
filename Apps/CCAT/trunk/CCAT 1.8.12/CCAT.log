@@ -1,0 +1,11 @@
+2/22/2007 9:52:13 AM EVENT    : frmMain Load (Start)
+2/22/2007 9:52:14 AM INFO     : frmMain.ChangeMode (From  To Session)
+2/22/2007 9:52:14 AM ROUTINE  : basCCAT.Read_Session_File (Start)
+2/22/2007 9:52:14 AM ROUTINE  : basDatabase.Open_Existing_Database: C:\Mercury\CCAT\CCAT 1.8.12\test1.mdb (Start)
+2/22/2007 9:52:14 AM ROUTINE  : basDatabase.Add_Database_Node: C:\Mercury\CCAT\CCAT 1.8.12\test1.mdb (Start)
+2/22/2007 9:52:14 AM ROUTINE  : basDatabase.Add_Database_Node (End)
+2/22/2007 9:52:14 AM ROUTINE  : basCCAT.Read_Session_File (End)
+2/22/2007 9:52:19 AM           MAIN: Window settings saved in system registry
+2/22/2007 9:52:19 AM           MAIN: Saving session information
+2/22/2007 9:52:19 AM               Session file: C:\Mercury\CCAT\CCAT 1.8.12\test1.mdb
+2/22/2007 9:52:19 AM MAIN: Log file ended

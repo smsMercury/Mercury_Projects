@@ -1,0 +1,438 @@
+<HTML>
+ <HEAD>
+  <!-- $MVD$:app("RoboHELP HTML Edition by Blue Sky Software, portions by MicroVision Dev. Inc.","769") -->
+  <!-- $MVD$:template("","0","0") -->
+  <!-- $MVD$:fontset("Arial","Arial") -->
+  <!-- $MVD$:fontset("Untitled Font Set 1","Keystrokes MT") -->
+  <!-- $MVD$:fontset("Algerian","Algerian") -->
+  <!-- $MVD$:fontset("Almanac MT","Almanac MT") -->
+  <TITLE>What's New for v1.6.0</TITLE>
+  <META NAME="generator" CONTENT="Microsoft FrontPage 4.0">
+  <SCRIPT LANGUAGE="javascript" TITLE="BSSC Special Effects" SRC="../BSSCDHTM.js">
+ </SCRIPT><LINK
+  REL="StyleSheet" HREF="../CCAT_Help.css"></HEAD>
+  <BODY BGCOLOR="BLACK" ONLOAD="BSSCOnLoad();" ONCLICK="BSSCOnClick();" ONUNLOAD="BSSCOnUnload();">
+  <P CLASS="Body-Text">
+   <TABLE WIDTH="100%" CELLPADDING="2" CELLSPACING="0" BORDER="0">
+    <TR>
+     <TD WIDTH="100%" BGCOLOR="MAROON" VALIGN=TOP>
+      <P STYLE="text-align : left;" ALIGN=LEFT>
+       <FONT FACE="Arial"><SPAN STYLE="font-size : 24.0pt;"><FONT COLOR="WHITE"><SPAN STYLE="font-weight : bold;">What's
+        New for CCAT v1.6.0</SPAN></FONT></SPAN></FONT></TD>
+    </TR>
+   </TABLE>
+  <P CLASS="Body-Text">
+   <font color="#FFFFFF" face="Arial">
+   CCAT v1.6.0 was released in November 2001, and addressed the 
+   remaining open SCRs and some targets of opportunity that appeared 
+   during the summer of 2001.</font></P>
+   <TABLE WIDTH="100%" CELLPADDING="2" CELLSPACING="0" BORDER="0">
+    <TR>
+     <TD WIDTH="100%" BGCOLOR="GREEN" VALIGN=TOP>
+      <P CLASS="Body-Text">
+       <SPAN STYLE="font-weight : bold;font-size : 14.0pt;"><FONT COLOR="WHITE" face="Arial">Functional
+        Modifications</FONT></SPAN></TD>
+    </TR>
+   </TABLE>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-weight : bold;font-size : 12.0pt;">Archive
+    Processing</SPAN></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <SPAN STYLE="font-size : 12.0pt;"><FONT FACE="Arial" color="#FFFFFF">Redesigned the 
+    archive processing methodology to use a Wizard approach to force the 
+    user to input all of the information necessary to process an archive. 
+    The Wizard then properly sequences the tasks to increase the chances 
+    of successfully processing an archive</FONT></SPAN></P>
+   </UL>
+  <P>
+   <font color="#FFFFFF">
+   <FONT FACE="Arial"><SPAN STYLE="font-weight : bold;font-size : 12.0pt;">Message
+    </SPAN></FONT><SPAN STYLE="font-size : 12.0pt;"><FONT FACE="Arial"><SPAN STYLE="font-weight : bold;">Translation</SPAN></FONT></SPAN></font></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <SPAN STYLE="font-size : 12.0pt;"><FONT FACE="Arial" color="#FFFFFF">To support the 
+    MUSTANG development, code was added to parse the MTSSERROR message. 
+    This message contains error and status information that proved useful 
+    in diagnosing MUSTANG discrepancies.</FONT></SPAN></P>
+   <LI CLASS="mvd-P">
+   <P>
+    <SPAN STYLE="font-size : 12.0pt;"><FONT FACE="Arial" color="#FFFFFF">A problem was 
+    discovered while processing CCOS 2.3 archives. It was later 
+    discovered that the developer of the MTSDALARM message changed the 
+    structure without informing us about it. Also, the change was made in 
+    such a way that it prevented a simple solution. As a result, the 
+    software now needs to know the version of the archive so it can 
+    correctly process that one message.</FONT></SPAN></P>
+   </UL>
+  <P>
+   <SPAN STYLE="font-size : 12.0pt;"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-weight : bold;">User
+    Interface</SPAN></FONT></SPAN></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <SPAN STYLE="font-size : 12.0pt;"><FONT FACE="Arial" color="#FFFFFF">An SCR was 
+    addressed regarding the Tools menu while no database was in use. Most 
+    of the Tools menu items are related to the current database and 
+    archive, so with no database, it was causing errors. Checks were put 
+    into place to see if there is a database and that it is currently selected.</FONT></SPAN></P>
+   <LI CLASS="mvd-P">
+   <P>
+    <SPAN STYLE="font-size : 12.0pt;"><FONT FACE="Arial" color="#FFFFFF">Updated the Help 
+    file to include more information, including the new Archive Wizard, 
+    and detailed information on how messages are translated</FONT></SPAN></P>
+   </UL>
+   <TABLE WIDTH="100%" CELLPADDING="2" CELLSPACING="0" BORDER="0">
+    <TR>
+     <TD WIDTH="100%" BGCOLOR="GREEN" VALIGN=TOP>
+      <P CLASS="Body-Text">
+       <SPAN STYLE="font-weight : bold;font-size : 14.0pt;"><FONT COLOR="WHITE" face="Arial">Software
+        Modifications</FONT></SPAN></TD>
+    </TR>
+   </TABLE>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">CCAT.ini</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Removed Help 
+    file context ID mapping to prevent users from completely destroying 
+    the help file map</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     MTSSERROR message tokens</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     token to control the Wizard Intro page display</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     token to control MTNAVREP position data source</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     tokens for CCOS versions</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Added
+     tokens to map Origin_ID codes to subsystem names</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">Security.ini</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">NO CHANGES</SPAN></FONT></P>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">basCCAT.bas</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Changed the 
+    timestamp in the WriteLogEntry routine to include the date</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     a method to write to the Token (INI) file</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Updated
+     the contents of the default INI file</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     a method to populate a supplied combo box with CCOS versions read 
+    from the INI file</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     a method to populate a supplied list view control with the list of 
+    CCOS messages from the INI file</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Updated
+     the Event file output to match the current format</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Removed
+     the Help ID map from the INI file and included the constants locally</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">basDatabase.bas</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Modified the way 
+    tables are referenced, so custom-named Archives can be used</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Modified
+     code that accessed the old Archive options form to use the new 
+    Archive Wizard</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Modified
+     the delete archive routine to force the Grid view to use a different 
+    data source so it does not lock out the delete operation.</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Replaced
+     the Create Summary Table routine with a function that returns a 
+    boolean status</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Replaced
+     the Create Data Table routine with a function that returns a boolean status</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">CCAT.chm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Updated content 
+    to reflect changes</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     pages that describe the translation process in detail</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     data flow diagram</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Added
+     Version Description Documents (VDD)</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">CCMessageStruct.bas</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added structures 
+    for the modified CCOS 2.3 variants</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     structure for the MTSSERROR message</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Updated
+     message processing IDs</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">DAS_Common.bas</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">NO CHANGES</SPAN></FONT></P>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">Filtraw2Das.bas</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added check for 
+    CCOS version to process message variants</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     LOB quality to DAS Flag field</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     routine to process the MTSSERROR message</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     property to store the CCOS version</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     routine to translate Origin_ID codes to Subsystem names</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Redesigned
+     early-termination methodology to conform to Archive Wizard requirements</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Modified
+     processing routines to return a boolean completion status code</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Removed
+     extraneous variable declarations</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Modified
+     code to use the new Archive Wizard instead of the Archive Options form</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Modified
+     error trap to allow the user to terminate the entire process rather 
+    than live through hundreds of error messages</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     error trap to handle the processing error that occurs with MTSDALARM 
+    if the wrong CCOS version is selected. The routine allows the user to 
+    stop processing altogether (ABORT), delete existing reports and 
+    ignore the message for the rest of the processing (IGNORE), or delete 
+    existing reports and switch to the alternate processing method (RETRY)</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Changed
+     the MTECHMOD processing routine to store Ech Type in the Status 
+    field so Origin_ID can be used for subsystem info.</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">frmAbout.frm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Updated variable 
+    names to comply with programming convention</SPAN></FONT></P>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">frmArchive.frm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">REMOVED PERMANENTLY</SPAN></FONT></P>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">frmArchiveProp.frm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Created form to 
+    display the selected archive's properties and to allow the user to 
+    change them.</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">If
+     the archive name is modified, all of the associated tables in the 
+    database are also modified</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">If
+     the archive date is modified, all of the data records are modified 
+    to match.</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">frmConvert.frm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Updated variable 
+    names to comply with programming convention</SPAN></FONT></P>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">frmDBInfo.frm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">NO CHANGES</SPAN></FONT></P>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">frmFilter.frm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Updated variable 
+    names to comply with programming convention</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     constants for DAS field names and file types</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Updated
+     Event file field selection to match current format</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">frmMain.frm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Changed the 
+    automatic window sizing to set the lower limit to 1/4 of the 
+    application width</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Changed
+     old Archive Options references to use the new Archive Wizard</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     refresh to Delete operations to prevent invalid data from appearing 
+    on the screen</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     code to prevent the Data Grid from connecting to data that was being deleted</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Modified
+     code to use the new Archive Properties form</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Modified
+     the event handler that monitors clicks on Tree View nodes</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     a property to the global Current structure to store the Archive name</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added
+     code to automatically size the columns of the ListView to the contents</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Updated
+     the Event file field list</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Modified
+     window resizing code to trigger only if the window is visible</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">frmMessage.frm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">NO CHANGES</SPAN></FONT></P>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">frmSecurity.frm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Added a routine 
+    to populate a supplied combo box with the known Classification values</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Updated
+     variable names to comply with programming convention</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">frmSplash.frm</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Updated splash 
+    screen contents</SPAN></FONT></P>
+   </UL>
+  <P>
+   <FONT FACE="Arial"><B><SPAN STYLE="font-size : 12.0pt;"><font color="#FFFFFF">frm</font></SPAN></B></FONT><font color="#FFFFFF"><B><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Wizard</SPAN></FONT></B></font><FONT FACE="Arial"><B><SPAN STYLE="font-size : 12.0pt;"><font color="#FFFFFF">.frm</font></SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Created new code 
+    to handle all Archive processing operations</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Wizard
+     prompts user for correct information and will not allow operation to 
+    proceed to the next step until everything is correct</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Sequences
+     code to process the archive in the proper order</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Allows
+     the user to terminate the process early</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Tied
+     form to the Help file</SPAN></FONT>
+   </UL>
+  <P>
+   <FONT FACE="Arial" color="#FFFFFF"><B><SPAN STYLE="font-size : 12.0pt;">Raw2filtraw.bas</SPAN></B></FONT></P>
+  <UL>
+   <LI CLASS="mvd-P">
+   <P>
+    <font color="#FFFFFF">
+    <FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Removed the code 
+    that updated the progress bar while filtering</SPAN></FONT><BR>
+    </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Modified
+     the code to communicate with the Archive Wizard</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><font color="#FFFFFF"><FONT FACE="Arial"><SPAN STYLE="font-size : 12.0pt;">Modified
+     code to initialize the summary table from the INI file instead of 
+    hardcoded values</SPAN></FONT><BR>
+      </font>
+    <LI CLASS="mvd-P"><FONT FACE="Arial" color="#FFFFFF"><SPAN STYLE="font-size : 12.0pt;">Replaced
+     processing routines with functions that return a 
+    boolean completion status</SPAN></FONT>
+ </BODY>
+</HTML>
