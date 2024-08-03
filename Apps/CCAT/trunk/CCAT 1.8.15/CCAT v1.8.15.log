@@ -1,0 +1,7 @@
+3/14/2013 3:41:01 PM EVENT    : frmMain Load (Start)
+3/14/2013 3:41:01 PM INFO     : frmMain.ChangeMode (From  To Session)
+3/14/2013 3:41:01 PM ROUTINE  : basCCAT.Read_Session_File (Start)
+3/14/2013 3:41:01 PM ROUTINE  : basCCAT.Read_Session_File (End)
+3/14/2013 3:41:06 PM           MAIN: Window settings saved in system registry
+3/14/2013 3:41:06 PM           MAIN: Saving session information
+3/14/2013 3:41:06 PM MAIN: Log file ended
